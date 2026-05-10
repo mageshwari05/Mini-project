@@ -1,10 +1,10 @@
-print("------ TEXT ANALYZER PROJECT ------")
-# Write data to file
+print("====== FINAL TEXT ANALYZER ======")
+# Write text to file
 file = open("text.txt", "w")
 text = input("Enter text: ")
 file.write(text)
 file.close()
-# Function for menu
+# Menu Function
 def menu():
     print("\n1. Show Content")
     print("2. Word Count")
@@ -15,18 +15,20 @@ def menu():
     print("7. Uppercase")
     print("8. Lowercase")
     print("9. Replace Word")
-    print("10. Exit")
+    print("10. Reverse Text")
+    print("11. Exit")
+# Main Loop
 while True:
     menu()
     choice = input("Enter choice: ")
+    # Read file
     file = open("text.txt", "r")
     data = file.read()
     file.close()
-    # Empty file check
     if data == "":
         print("File is empty")
     elif choice == "1":
-        print("\nFile Content:")
+        print("\nContent:")
         print(data)
     elif choice == "2":
         print("Word count:", len(data.split()))
@@ -57,9 +59,13 @@ while True:
         file.close()
         print("Word replaced successfully")
     elif choice == "10":
-        print("Exit")
+        print("Reverse text:")
+        print(data[::-1])
+    elif choice == "11":
+        print("Project Ended")
         break
     else:
         print("Invalid choice")
+
 
 
